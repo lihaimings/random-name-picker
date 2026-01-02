@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-50: #f8fafc;
+  --primary-100: #f1f5f9;
+  --primary-500: #64748b;
+  --primary-600: #475569;
+  --primary-700: #334155;
+  --primary-800: #1e293b;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+}
+
+.btn-primary {
+  @apply bg-gradient-to-r from-slate-600 to-gray-800 hover:from-slate-700 hover:to-gray-900 
+         text-white font-semibold py-3 px-6 rounded-xl shadow-lg shadow-slate-500/25 
+         transition-all duration-300 hover:shadow-xl hover:shadow-slate-500/30;
+}
+
+.btn-secondary {
+  @apply bg-white hover:bg-gray-50 text-gray-800 font-medium py-3 px-6 rounded-xl 
+         border-2 border-gray-200 hover:border-slate-400 transition-all duration-300;
+}
+
+.card {
+  @apply bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-white/50 p-6;
+}
+
+.input {
+  @apply w-full px-4 py-3 rounded-xl border-2 border-gray-200 
+         focus:border-slate-500 focus:ring-4 focus:ring-slate-500/20 
+         outline-none transition-all duration-300 bg-white;
+}
+
+.container-custom {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.section {
+  @apply py-16 md:py-24;
+}
+
+/* Spinning animation */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 0.1s linear infinite;
+}
+
+/* Name highlight animation */
+@keyframes pulse-highlight {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+}
+
+.animate-pulse-highlight {
+  animation: pulse-highlight 0.15s ease-in-out infinite;
+}
